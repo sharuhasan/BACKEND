@@ -1,0 +1,172 @@
+<h1>CRUD-APP</h1>
+
+{{# if errors}}
+    <section class="errors" >
+        <h1 style="text-align: center;color:darkred">ERRORS</h1>
+        <ol>
+            {{# each errors}}
+                <li><b>{{this.msg}}</b></li><br><br>
+            {{/each}}
+        </ol>
+    </section>
+
+{{/if}}
+{{# if success }}
+    <h2>ITEM INSERTED</h2>
+{{/if}}
+     <section class="insert">
+         <h3>Insert Data</h3>
+         <form action="/insert" method="post">
+             <div class="input">
+                 <label for="name">NAME</label>
+                 <input type="text" id="name" name="name">
+             </div>
+             <div class="input">
+                 <label for="email">EMAIL</label>
+                 <input type="text" id="email" name="email">
+             </div>
+             <div class="input">
+                 <label for="password">PASSWORD</label>
+                 <input type="password" id="password" name="password">
+             </div>
+             <div class="input">
+                 <label for="confirmpassword">CONFIRM PASSWORD</label>
+                 <input type="password" id="confirmpassword" name="confirmpassword">
+             </div>
+            <div></div>
+
+             <div class="input">
+                 <label for="number">MOBILE NUMBER</label>
+                 <input type="text" id="number" name="number">
+             </div>
+             <div class="select ">
+                 <select  name="state" >
+                     <option>SELECT-STATE</option>
+                     <option>Tamil Nadu</option>
+                     <option>Karnataka</option>
+                     <option>Kerala</option>
+                     <option>Andhra Pradesh</option>
+                     <option>Arunachal Pradesh</option>
+                     <option>Assam</option>
+                     <option>Bihar</option>
+                     <option>Chhatisgarh</option>
+                     <option>Goa</option>
+                     <option>Gujarat</option>
+                     <option>Haryana</option>
+                     <option>Himachal Pradesh</option>
+                     <option>Jharkhand</option>
+                     <option>Karnataka </option>
+                     <option>Kerala</option>
+                     <option>Madhya Pradesh </option>
+                     <option>Maharashtra </option>
+                     <option>Manipur</option>
+                     <option>Meghalaya</option>
+                     <option>Mizoram</option>
+                     <option>Nagaland</option>
+                     <option>Odisha </option>
+                     <option>Punjab</option>
+                     <option>Rajasthan</option>
+                     <option>Sikkim</option>
+                     <option>Tamil Nadu</option>
+                     <option>Telangana</option>
+                     <option>Tripura</option>
+                     <option>Uttarakhand</option>
+                     <option>Uttar Pradesh</option>
+                     <option>West Bengal</option>
+                 </select>
+             </div>
+             <button type="submit">INSERT</button>
+         </form>
+     </section>
+     <section class="get">
+         <h3>Get Data</h3>
+         <a href="/get-data">LOAD DATA</a>
+         <div>
+             {{# each items }}
+                 <article class="item">
+                     <div>NAME: {{ this.name }}</div>
+                     <div>EMAIL: {{ this.email }}</div>
+                     <div>PASSWORD: {{ this.password }}</div>
+                     <div>MOBILE NO: {{ this.number }}</div>
+                     <div>STATE: {{ this.state }}</div>
+                     <div>ID: {{ this._id }}</div>
+                 </article>
+             {{/each}}
+         </div>
+     </section>
+     <section class="update">
+         <h3>Update Data</h3>
+         <form action="/update" method="post">
+             <div class="input">
+                 <label for="id">ID</label>
+                 <input type="text" id="id" name="id">
+             </div>
+             <div class="input">
+                 <label for="name">NAME</label>
+                 <input type="text" id="name" name="name">
+             </div>
+             <div class="input">
+                 <label for="email">EMAIL</label>
+                 <input type="text" id="email" name="email">
+             </div>
+             <div class="input">
+                 <label for="password">PASSWORD</label>
+                 <input type="password" id="password" name="password">
+             </div>
+             <div class="input">
+                 <label for="number">MOBILE NUMBER</label>
+                 <input type="text" id="number" name="number">
+             </div>
+             <div class="select ">
+                 <select  name="state" >
+                     <option>SELECT-STATE</option>
+                     <option>Tamil Nadu</option>
+                     <option>Karnataka</option>
+                     <option>Kerala</option>
+                     <option>Andhra Pradesh</option>
+                     <option>Arunachal Pradesh</option>
+                     <option>Assam</option>
+                     <option>Bihar</option>
+                     <option>Chhatisgarh</option>
+                     <option>Goa</option>
+                     <option>Gujarat</option>
+                     <option>Haryana</option>
+                     <option>Himachal Pradesh</option>
+                     <option>Jharkhand</option>
+                     <option>Karnataka </option>
+                     <option>Kerala</option>
+                     <option>Madhya Pradesh </option>
+                     <option>Maharashtra </option>
+                     <option>Manipur</option>
+                     <option>Meghalaya</option>
+                     <option>Mizoram</option>
+                     <option>Nagaland</option>
+                     <option>Odisha </option>
+                     <option>Punjab</option>
+                     <option>Rajasthan</option>
+                     <option>Sikkim</option>
+                     <option>Tamil Nadu</option>
+                     <option>Telangana</option>
+                     <option>Tripura</option>
+                     <option>Uttarakhand</option>
+                     <option>Uttar Pradesh</option>
+                     <option>West Bengal</option>
+                 </select>
+             </div>
+             <button type="submit">UPDATE</button>
+         </form>
+     </section>
+     </section>
+     <section class="delete">
+         <h3>Delete Data</h3>
+         <form action="/delete" method="post">
+             <div class="input">
+                 <label for="id">ID</label>
+                 <input type="text" id="id" name="id">
+             </div>
+             <button type="submit">DELETE</button>
+         </form>
+     </section>
+
+
+
