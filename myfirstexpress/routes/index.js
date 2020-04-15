@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var mongoose=require('mongoose');
 var url = 'mongodb://localhost:27017/test';
-mongoose.connect("mongodb://localhost:27017/test1",  {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect("mongodb://localhost:27017/test2",  {useNewUrlParser: true, useUnifiedTopology: true});
 var schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
