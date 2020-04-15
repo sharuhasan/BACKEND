@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var mongoose=require('mongoose');
-
+var url = 'mongodb://localhost:27017/test';
 mongoose.connect("mongodb://localhost:27017/test1",  {useNewUrlParser: true, useUnifiedTopology: true});
 var schema = mongoose.Schema;
 const bcrypt = require('bcrypt');
@@ -80,7 +80,14 @@ router.post('/update',function(req,res,next){
             enc_password = hash;
         });
     });
-    
+    var item =
+        {
+            name: req.body.name,
+            email: req.body.email,
+            number: req.body.number,
+            password: enc_password,
+            state: req.body.state
+        };
     var id =req.body.id;
     user_data.findById(id,function(err,doc){
         if(err)
